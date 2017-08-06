@@ -1,0 +1,19 @@
+{
+  "name": "hellographql",
+  "version": "1.0.0",
+  "description": "GraphQL starter",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "graphql"
+  ],
+  "author": "Jon Bonso",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.3",
+    "express-graphql": "^0.6.7",
+    "graphql": "^0.10.5"
+  }
+}
