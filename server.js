@@ -31,6 +31,7 @@ var schema = buildSchema(`
   type Mutation {
     createStock(input: StockObject): Stock
     updateStock(id: ID!, input: StockObject): Stock
+    deleteStock(id: ID!): Stock
   }
 `);
 
@@ -51,9 +52,20 @@ var root = {
     return mockDatabase;
   },
 
+/**
+ * Sample GetStock Query:
+   { 
+    getStock(id: "ad5ffb568d234aa723a0") {
+      id
+      stockName
+      stockPrice
+    }
+   }
+*/
+
   getStock: function ({id}) {
     if (!mockDatabase[id]) {
-      throw new Error('no Stock exists with ID: ' + id);
+      throw new Error('No Stock exists with ID: ' + id);
     }
     return new Stock(id, mockDatabase[id]);
   },
@@ -98,6 +110,23 @@ var root = {
     }
     mockDatabase[id] = input;
     return new Stock(id, input);
+  },
+
+  /**
+   * Sample DeleteStock Mutation Payload: 
+   *    
+   *    mutation {
+          deleteStock( id: "cd9440b48a1815b3da4d"){
+            id
+          }  
+        }
+   */
+  deleteStock: function ({id}) {
+    if (!mockDatabase[id]) {
+      throw new Error('Delete failed. No Stock exists with ID: ' + id);
+    }
+    delete mockDatabase[id];
+    return new Stock(id, {stockName: '' , stockPrice: ''});
   },
 };
 
