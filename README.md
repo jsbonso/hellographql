@@ -4,7 +4,12 @@ Author: Jon Bonso
 A simple GraphQL API with Create, Read, Update and Delete functions
 
 # How to run:
-npm start
+```npm start```
+
+Then go to http://localhost:2017/graphql
+
+![Hello GraphiQL API](https://raw.githubusercontent.com/jsbonso/hellographql/master/hello_graphql.png?raw=true "Hello GraphiQL API")
+
 
 #Sample CreateStock Mutation Payload: 
 ```
