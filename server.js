@@ -77,7 +77,7 @@ var root = {
   },
 
   /**
-   * Sample CreateStock Mutation Payload: 
+   * Sample UpdateStock Mutation Payload: 
    * 
    *  Step 1: Ensure you create at least 1 stock
    *  Step 2: Get the Id ( example: cd9440b48a1815b3da4d )
